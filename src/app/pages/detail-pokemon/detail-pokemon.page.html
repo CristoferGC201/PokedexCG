@@ -1,0 +1,86 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()" class="close-button">
+        <ion-icon slot="icon-only" name="close" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="pokemon">
+
+  <div class="image-container">
+    <img [src]="pokemon.sprites.other?.['official-artwork']?.front_default || pokemon.sprites.front_default"
+         alt="{{ pokemon.name }}" />
+  </div>
+
+  <ion-card>
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>{{ pokemon.name | titlecase }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="ion-text-center">
+        <ion-chip *ngFor="let type of pokemon.types" [ngClass]="type.type.name" class="type-chip">
+          {{ type.type.name | uppercase }}
+        </ion-chip>
+      </div>
+
+      <ion-grid class="info-grid">
+        <ion-row>
+          <ion-col size="6" class="ion-text-center">
+            <strong>Peso</strong>
+            <div>{{ pokemon.weight / 10 }} kg</div> </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <strong>Altura</strong>
+            <div>{{ pokemon.height / 10 }} m</div> </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Habilidades</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="abilities-grid">
+      <div class="ability-group">
+        <strong>Principales</strong>
+        <div *ngFor="let ability of pokemon.abilities">
+          <span *ngIf="!ability.is_hidden">{{ ability.ability.name | titlecase }}</span>
+        </div>
+      </div>
+
+      <div class="ability-group">
+        <strong>Oculta</strong>
+        <div *ngFor="let ability of pokemon.abilities">
+          <span *ngIf="ability.is_hidden">{{ ability.ability.name | titlecase }}</span>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Estadísticas</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngFor="let stat of pokemon.stats" class="stat-row">
+        <div class="stat-name">{{ stat.stat.name | uppercase }}</div>
+        <div class="stat-bar">
+          <ion-progress-bar 
+            [value]="stat.base_stat / 200" 
+            [ngClass]="stat.stat.name">
+          </ion-progress-bar>
+        </div>
+        <div class="stat-value">{{ stat.base_stat }}</div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

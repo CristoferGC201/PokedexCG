@@ -1,0 +1,134 @@
+/* Fondo degradado (opcional, pero se ve bien) */
+ion-content {
+  --background: linear-gradient(0deg, rgba(255, 255, 255, 1) 50%, rgba(240, 240, 240, 1) 100%);
+}
+
+/* Botón de cerrar */
+.close-button {
+  --background: rgba(0, 0, 0, 0.3);
+  --border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin: 10px;
+}
+
+/* Contenedor de la Imagen */
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px; /* Sube la imagen un poco */
+  margin-bottom: 10px;
+
+  img {
+    width: 200px;
+    height: 200px;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+  }
+}
+
+/* Estilo de las tarjetas */
+ion-card {
+  margin: 16px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* * Copiamos los estilos de los chips de tipo 
+ * (los mismos que usamos en list-pokemons.page.scss)
+*/
+.type-chip {
+  padding: 4px 8px;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-right: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid de Información (Peso y Altura) */
+.info-grid {
+  margin-top: 10px;
+  strong {
+    color: #888;
+    font-size: 0.9em;
+  }
+  div {
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+}
+
+/* Grid de Habilidades */
+.abilities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  .ability-group {
+    strong {
+      color: #888;
+      font-size: 0.9em;
+    }
+    span {
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+  }
+}
+
+/* Fila de Estadísticas */
+.stat-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  .stat-name {
+    width: 20%;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: #888;
+  }
+  .stat-bar {
+    width: 65%;
+    padding: 0 5px;
+    ion-progress-bar {
+      height: 10px;
+      border-radius: 5px;
+    }
+  }
+  .stat-value {
+    width: 15%;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: right;
+  }
+}
+
+/* Colores de las barras de estadísticas (opcional) */
+ion-progress-bar.hp { --progress-background: #FF0000; }
+ion-progress-bar.attack { --progress-background: #F08030; }
+ion-progress-bar.defense { --progress-background: #F8D030; }
+ion-progress-bar.special-attack { --progress-background: #6890F0; }
+ion-progress-bar.special-defense { --progress-background: #78C850; }
+ion-progress-bar.speed { --progress-background: #F85888; }
+
+
+/* * ESTILOS DE LOS TIPOS (Copia de list-pokemons.page.scss)
+*/
+.grass, .planta, .césped { background-color: #78C850; }
+.poison, .veneno { background-color: #A040A0; }
+.fire, .fuego { background-color: #F08030; }
+.water, .agua { background-color: #6890F0; }
+.electric, .electrico { background-color: #F8D030; color: #333; text-shadow: none; }
+.normal { background-color: #A8A878; }
+.bug, .bicho { background-color: #A8B820; }
+.flying, .volador, .vuelo { background-color: #A890F0; }
+.ground, .tierra { background-color: #E0C068; }
+.fairy, .hada { background-color: #EE99AC; }
+.fighting, .lucha { background-color: #C03028; }
+.psychic, .psiquico { background-color: #F85888; }
+.rock, .roca { background-color: #B8A038; }
+.ghost, .fantasma { background-color: #705898; }
+.ice, .hielo { background-color: #98D8D8; }
+.dragon { background-color: #7038F8; }

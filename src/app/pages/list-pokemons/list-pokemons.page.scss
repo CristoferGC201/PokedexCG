@@ -1,0 +1,72 @@
+/* Estilo base para las "etiquetas" de tipo */
+.type-chip {
+  padding: 4px 8px;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-right: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Colores de Tipos (Corregidos para Español) --- */
+
+.grass, .planta, .césped { // <-- Corregido
+  background-color: #78C850;
+}
+
+.poison, .veneno {
+  background-color: #A040A0;
+}
+
+.fire, .fuego {
+  background-color: #F08030;
+}
+
+.water, .agua {
+  background-color: #6890F0;
+}
+
+.electric, .electrico {
+  background-color: #F8D030;
+  color: #333;
+  text-shadow: none;
+}
+
+.normal {
+  background-color: #A8A878;
+}
+
+.bug, .bicho {
+  background-color: #A8B820;
+}
+
+.flying, .volador, .vuelo { // <-- Corregido
+  background-color: #A890F0;
+}
+
+/* ... (el resto de los colores) ... */
+.ground, .tierra {
+  background-color: #E0C068;
+}
+.fairy, .hada {
+  background-color: #EE99AC;
+}
+.fighting, .lucha {
+  background-color: #C03028;
+}
+.psychic, .psiquico {
+  background-color: #F85888;
+}
+.rock, .roca {
+  background-color: #B8A038;
+}
+.ghost, .fantasma {
+  background-color: #705898;
+}
+.ice, .hielo {
+  background-color: #98D8D8;
+}
+.dragon {
+  background-color: #7038F8;
+}
